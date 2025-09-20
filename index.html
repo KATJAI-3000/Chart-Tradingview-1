@@ -22,21 +22,31 @@
     const watchlist= (params.get('watchlist') || 'FX:EURUSD,BINANCE:BTCUSDT')
                       .split(',').filter(Boolean);
     new TradingView.widget({
-      container_id: "tv",
+    container_id: "tv",
       autosize: true,
-      symbol: symbol,
-      interval: interval,
+      symbol: "FX:EURUSD",
+      interval: "D",
       timezone: "Etc/UTC",
-      theme: theme,
+      theme: "light",
       style: "1",
       locale: "en",
       allow_symbol_change: true,
       hide_side_toolbar: false,
       withdateranges: true,
-      studies: studies,
-      watchlist: watchlist,
-      details: true,
-      calendar: true
+      overrides: {
+        "paneProperties.background": "#ffffff",
+        "paneProperties.backgroundType": "solid",
+        "paneProperties.vertGridProperties.color": "rgba(0,0,0,0)",
+        "paneProperties.horzGridProperties.color": "rgba(0,0,0,0)",
+        "scalesProperties.textColor": "#0f172a",
+        "mainSeriesProperties.candleStyle.upColor": "#ffffff",
+        "mainSeriesProperties.candleStyle.downColor": "#000000",
+        "mainSeriesProperties.candleStyle.borderUpColor": "#000000",
+        "mainSeriesProperties.candleStyle.borderDownColor": "#000000",
+        "mainSeriesProperties.candleStyle.wickUpColor": "#000000",
+        "mainSeriesProperties.candleStyle.wickDownColor": "#000000",
+        "mainSeriesProperties.candleStyle.drawWick": true,
+        "mainSeriesProperties.candleStyle.drawBorder": true
     });
   </script>
 </body>
